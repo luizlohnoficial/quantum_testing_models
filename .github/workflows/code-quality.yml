@@ -1,4 +1,4 @@
-name: Code Quality Checks
+name: Code Quality
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint-and-security:
+  quality-check:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,16 +22,16 @@ jobs:
 
     - name: Install tools
       run: |
-        pip install flake8 bandit black
+        pip install flake8 black bandit
+
+    - name: Format with Black
+      run: |
+        black .
 
     - name: Run Lint (flake8)
       run: |
         flake8 .
 
-    - name: Run Security Checks (bandit)
+    - name: Run Security Check (bandit)
       run: |
         bandit -r .
-
-    - name: Check Formatting (black)
-      run: |
-        black --check .

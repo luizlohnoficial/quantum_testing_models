@@ -1,4 +1,4 @@
-# Quantum Unit Testing
+# Quantum Unit Testing - Structured with Code Quality
 
 ![Quantum Tests](https://github.com/usuario/repositorio/actions/workflows/quantum-tests.yml/badge.svg)
 ![Code Quality](https://github.com/usuario/repositorio/actions/workflows/code-quality.yml/badge.svg)
@@ -12,14 +12,10 @@ Este repositório contém exemplos de testes unitários aplicados ao desenvolvim
 - Braket (AWS)
 
 ## Pipeline
-- ✅ Testes unitários com matriz de execução (Qiskit, Cirq, PennyLane, Braket)
-- ✅ Lint (flake8)
-- ✅ Análise de segurança (bandit)
-- ✅ Verificação de formatação (black)
-
-## Logging Profissional
-Todos os scripts possuem logs detalhados com notação padrão, incluindo:
-- 🔸 [INICIO], [ETAPA], [CHECK], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM]
+- ✅ Dividido em etapas: Construção, Execução e Análise
+- ✅ Logging padronizado com notações [INICIO], [ETAPA], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM]
+- ✅ Workflows no GitHub Actions por etapa
+- ✅ Pipeline de qualidade com Black (formatador), Flake8 (lint) e Bandit (segurança)
 
 ## Autor
 Desenvolvido por Luiz Lohn com suporte do ChatGPT OpenAI.

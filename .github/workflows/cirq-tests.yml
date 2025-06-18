@@ -2,11 +2,10 @@ name: Cirq Unit Tests
 
 on:
   push:
-    paths:
-      - 'Cirq/**'
+    branches: [ main ]
   pull_request:
-    paths:
-      - 'Cirq/**'
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:

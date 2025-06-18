@@ -2,11 +2,10 @@ name: AWS Braket Unit Tests
 
 on:
   push:
-    paths:
-      - 'Braket/**'
+    branches: [ main ]
   pull_request:
-    paths:
-      - 'Braket/**'
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:

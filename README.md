@@ -11,18 +11,15 @@ Este repositório contém exemplos de testes unitários aplicados ao desenvolvim
 - PennyLane (Xanadu)
 - Braket (AWS)
 
-## Estrutura
-- Qiskit/: Exemplos com Qiskit
-- Cirq/: Exemplos com Cirq
-- PennyLane/: Exemplos com PennyLane
-- Braket/: Exemplos com Amazon Braket
-- docs/: Documentação complementar
-
 ## Pipeline
 - ✅ Testes unitários com matriz de execução (Qiskit, Cirq, PennyLane, Braket)
 - ✅ Lint (flake8)
 - ✅ Análise de segurança (bandit)
 - ✅ Verificação de formatação (black)
+
+## Logging Profissional
+Todos os scripts possuem logs detalhados com notação padrão, incluindo:
+- 🔸 [INICIO], [ETAPA], [CHECK], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM]
 
 ## Autor
 Desenvolvido por Luiz Lohn com suporte do ChatGPT OpenAI.

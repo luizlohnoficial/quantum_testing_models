@@ -1,9 +1,10 @@
-# Quantum Unit Testing - Structured with Code Quality
+# Quantum Unit Testing - Segurança e Qualidade Corporativa
 
-![Quantum Tests](https://github.com/usuario/repositorio/actions/workflows/quantum-tests.yml/badge.svg)
+![Qiskit Tests](https://github.com/usuario/repositorio/actions/workflows/qiskit-tests.yml/badge.svg)
+![Cirq Tests](https://github.com/usuario/repositorio/actions/workflows/cirq-tests.yml/badge.svg)
+![PennyLane Tests](https://github.com/usuario/repositorio/actions/workflows/pennylane-tests.yml/badge.svg)
+![Braket Tests](https://github.com/usuario/repositorio/actions/workflows/braket-tests.yml/badge.svg)
 ![Code Quality](https://github.com/usuario/repositorio/actions/workflows/code-quality.yml/badge.svg)
-
-Este repositório contém exemplos de testes unitários aplicados ao desenvolvimento de algoritmos para computação quântica.
 
 ## Frameworks abordados
 - Qiskit (IBM Quantum) — requer `qiskit-aer`
@@ -12,13 +13,10 @@ Este repositório contém exemplos de testes unitários aplicados ao desenvolvim
 - Braket (AWS)
 
 ## Pipeline
-- ✅ Dividido em etapas: Construção, Execução e Análise
-- ✅ Logging padronizado com notações [INICIO], [ETAPA], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM]
-- ✅ Workflows no GitHub Actions por etapa e pipeline de qualidade
-- ✅ Formatação automática (Black), Lint (flake8) e Análise de Segurança (Bandit)
-
-## Observações
-- O Qiskit, desde a versão 0.43, separa o Aer (simulador) no pacote `qiskit-aer`.
+- ✅ Pipelines separadas por framework
+- ✅ Logging estruturado com notações: [INICIO], [ETAPA], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM]
+- ✅ Pipeline de qualidade com Black, Flake8 e Bandit
+- ✅ Bandit validado: eval removido, asserts convertidos em exceptions seguras
 
 ## Autor
 Desenvolvido por Luiz Lohn com suporte do ChatGPT OpenAI.

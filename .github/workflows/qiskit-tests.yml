@@ -2,11 +2,10 @@ name: Qiskit Unit Tests
 
 on:
   push:
-    paths:
-      - 'Qiskit/**'
+    branches: [ main ]
   pull_request:
-    paths:
-      - 'Qiskit/**'
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:

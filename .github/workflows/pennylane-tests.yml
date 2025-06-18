@@ -2,11 +2,10 @@ name: PennyLane Unit Tests
 
 on:
   push:
-    paths:
-      - 'PennyLane/**'
+    branches: [ main ]
   pull_request:
-    paths:
-      - 'PennyLane/**'
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:

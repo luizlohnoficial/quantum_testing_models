@@ -1,0 +1,9 @@
+qiskit
+qiskit-aer
+cirq
+pennylane
+amazon-braket-sdk
+numpy
+flake8
+black
+bandit

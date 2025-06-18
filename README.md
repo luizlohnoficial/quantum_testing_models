@@ -1,20 +1,27 @@
+# Quantum Unit Testing - Verbose Pipeline com Governança
 
-# Quantum Unit Testing Examples
-
-Este repositório contém exemplos de testes unitários aplicados ao desenvolvimento de algoritmos para computação quântica.
-
-## Frameworks abordados
+## Frameworks Abordados
 - Qiskit (IBM Quantum)
 - Cirq (Google)
 - PennyLane (Xanadu)
 - Braket (AWS)
 
-## Estrutura
-- Qiskit/: Exemplos com Qiskit
-- Cirq/: Exemplos com Cirq
-- PennyLane/: Exemplos com PennyLane
-- Braket/: Exemplos com Amazon Braket
-- docs/: Documentação complementar
+## Pipeline
+- ✅ Pipelines verbosas por framework.
+- ✅ Logging estruturado com notações: [INICIO], [ETAPA], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM].
+- ✅ Segurança aplicada: eval removido, asserts convertidos em exceções explícitas.
 
-## Autor
+## Execução
+1. Instale dependências:
+   pip install -r requirements.txt
+2. Execute localmente os scripts na ordem:
+   - build_circuit.py
+   - run_circuit.py
+   - analyze_results.py
+
+## Estrutura dos Scripts
+- build_circuit.py: Cria e salva o circuito.
+- run_circuit.py: Executa o circuito no simulador e salva os resultados.
+- analyze_results.py: Analisa os resultados e valida as distribuições.
+
 Desenvolvido por Luiz Lohn com suporte do ChatGPT OpenAI.

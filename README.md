@@ -1,4 +1,4 @@
-# Quantum Unit Testing - Segurança e Qualidade Corporativa
+# Quantum Unit Testing - Verbose Pipeline com Governança
 
 ![Qiskit Tests](https://github.com/usuario/repositorio/actions/workflows/qiskit-tests.yml/badge.svg)
 ![Cirq Tests](https://github.com/usuario/repositorio/actions/workflows/cirq-tests.yml/badge.svg)
@@ -7,14 +7,14 @@
 ![Code Quality](https://github.com/usuario/repositorio/actions/workflows/code-quality.yml/badge.svg)
 
 ## Frameworks abordados
-- Qiskit (IBM Quantum) — requer `qiskit-aer`
+- Qiskit (IBM Quantum)
 - Cirq (Google)
 - PennyLane (Xanadu)
 - Braket (AWS)
 
 ## Pipeline
-- ✅ Pipelines separadas por framework
-- ✅ Logging estruturado com notações: [INICIO], [ETAPA], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM]
+- ✅ Pipelines verbosas por framework
+- ✅ Logging estruturado com [INICIO], [ETAPA], [RESULT], [ASSERT], [SUCESSO], [ERRO], [FIM]
 - ✅ Pipeline de qualidade com Black, Flake8 e Bandit
 - ✅ Bandit validado: eval removido, asserts convertidos em exceptions seguras
 

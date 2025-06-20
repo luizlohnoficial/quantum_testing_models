@@ -7,8 +7,15 @@ except ImportError as exc:
     ) from exc
 import logging
 import numpy as np
+import sys
 
-logging.basicConfig(level=logging.INFO, format="%(message)s")
+
+# Configuração centralizada de logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    stream=sys.stdout
+)
 logger = logging.getLogger(__name__)
 
 # Constantes para fácil manutenção
@@ -43,8 +50,12 @@ def test_hadamard_distribution():
 if __name__ == "__main__":
     try:
         test_hadamard_distribution()
-    except AssertionError as exc:
-        logger.error("Testes falharam: %s", exc)
-        raise
+    except AssertionError as e:
+        logger.exception("Teste falhou")
+        sys.exit(1)
+    except Exception as e:
+        logger.exception("Erro inesperado")
+        sys.exit(2)
     else:
-        logger.info("Testes passaram: distribuição próxima a 50/50")
+        logger.info("Teste aprovado: Distribuição dentro do esperado (±%.0f%%)", 
+                   TOLERANCE * 100)

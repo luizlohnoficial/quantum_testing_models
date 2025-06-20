@@ -7,23 +7,23 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
 
 def test_double_hadamard_returns_initial_state():
-    logger.info("Building circuit")
+    logger.info("Criando circuito")
     circuit = Circuit().h(0).h(0).measure(0)
-    logger.info("Circuit:\n%s", circuit)
-    logger.info("Running on LocalSimulator")
+    logger.info("Circuito criado:\n%s", circuit)
+    logger.info("Rodando simulador local")
     simulator = LocalSimulator()
 
     result = simulator.run(circuit, shots=100).result()
     counts = result.measurement_counts
-    logger.info("Counts: %s", counts)
+    logger.info("Contagem: %s", counts)
 
-    assert counts.get('0', 0) == 100, "double hadamard should return |0>"
+    assert counts.get('0', 0) == 100, "double hadamard deve retornar |0>"
 
 if __name__ == "__main__":
     try:
         test_double_hadamard_returns_initial_state()
     except AssertionError as exc:
-        logger.info("Test failed: %s", exc)
+        logger.error("Testes falharam: %s", exc)
         raise
     else:
-        logger.info("Test passed: distribution close to 50/50")
+        logger.info("Os testes passaram: distribução próximo a 50/50")

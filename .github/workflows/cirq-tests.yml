@@ -22,24 +22,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        set -x
         pip install cirq numpy
-
-    - name: List Assets
-      run: |
-        set -x
-        ls -1
-        ls Cirq
 
     - name: Run Cirq Tests
       run: |
-        set -x
-        python Cirq/hadamard_test.py | tee cirq_results.log
-        status=${PIPESTATUS[0]}
-        echo "exit code: $status" | tee -a cirq_results.log
+        python Cirq/hadamard_test.py
         exit $status
 
-    - name: Show Results
-      run: |
-        set -x
-        cat cirq_results.log

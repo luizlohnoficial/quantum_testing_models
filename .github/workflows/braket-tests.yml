@@ -26,6 +26,8 @@ jobs:
 
     - name: Run Braket Tests
       run: |
+        echo "------------Superposição---------------------------"
         python Braket/double_hadamard_test.py
-        exit $status
+        echo "------------Emaranhamento Quântico---------------------------"
+        python Braket/bell_state_test.py
 

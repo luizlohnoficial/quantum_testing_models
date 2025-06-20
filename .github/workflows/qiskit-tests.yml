@@ -26,5 +26,7 @@ jobs:
 
     - name: Run Qiskit Tests
       run: |
+        echo "------------Superposição---------------------------"
         python Qiskit/hadamard_test.py
-        exit $status
+        echo "------------Emaranhamento Quântico---------------------------"
+        python Qiskit/bell_state_test.py

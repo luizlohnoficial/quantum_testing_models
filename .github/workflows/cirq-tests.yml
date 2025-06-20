@@ -26,6 +26,8 @@ jobs:
 
     - name: Run Cirq Tests
       run: |
+        echo "------------Superposição---------------------------"
         python Cirq/hadamard_test.py
-        exit $status
+        echo "------------Emaranhamento Quântico---------------------------"
+        python Cirq/bell_state_test.py
 

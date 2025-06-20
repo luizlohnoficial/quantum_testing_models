@@ -1,5 +1,4 @@
-
-from qiskit import QuantumCircuit, execute
+from qiskit import QuantumCircuit, transpile
 from qiskit.providers.aer import Aer
 import numpy as np
 
@@ -8,8 +7,9 @@ def test_hadamard_distribution():
     qc.h(0)
     qc.measure(0, 0)
 
-    simulator = Aer.get_backend('qasm_simulator')
-    job = execute(qc, simulator, shots=1000)
+    backend = Aer.get_backend('aer_simulator')
+    compiled = transpile(qc, backend)
+    job = backend.run(compiled, shots=1000)
     counts = job.result().get_counts()
 
     zero_ratio = counts.get('0', 0) / 1000

@@ -28,7 +28,8 @@ jobs:
     - name: List Assets
       run: |
         set -x
-        ls -R
+        ls -1
+        ls Cirq
 
     - name: Run Cirq Tests
       run: |

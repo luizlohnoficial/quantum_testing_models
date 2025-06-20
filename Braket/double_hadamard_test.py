@@ -16,15 +16,6 @@ def test_double_hadamard_returns_initial_state():
     result = simulator.run(circuit, shots=100).result()
     counts = result.measurement_counts
     logger.info("Counts: %s", counts)
+    
+    logger.info(assert counts.get('0', 0) == 100, "double hadamard should return |0>")
 
-    assert counts.get('0', 0) == 100, "double hadamard should return |0>"
-
-
-if __name__ == "__main__":
-    try:
-        test_double_hadamard_returns_initial_state()
-    except AssertionError as exc:
-        logger.error("Test failed: %s", exc)
-        raise
-    else:
-        logger.info("Test passed: double hadamard returned |0>")

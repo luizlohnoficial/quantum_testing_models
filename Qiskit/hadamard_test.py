@@ -1,5 +1,10 @@
-from qiskit import QuantumCircuit, transpile
-from qiskit.providers.aer import Aer
+try:
+    from qiskit import QuantumCircuit, transpile
+    from qiskit.providers.aer import Aer
+except ImportError as exc:
+    raise ImportError(
+        "Qiskit is required to run this test. Install with `pip install qiskit qiskit-aer`."
+    ) from exc
 import numpy as np
 
 def test_hadamard_distribution():

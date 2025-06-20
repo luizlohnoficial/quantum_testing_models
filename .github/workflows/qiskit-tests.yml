@@ -22,8 +22,9 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        pip install qiskit numpy
+        pip install qiskit qiskit-aer numpy
 
     - name: Run Qiskit Tests
       run: |
         python Qiskit/hadamard_test.py
+        exit $status

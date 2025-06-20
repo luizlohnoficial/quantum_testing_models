@@ -27,3 +27,4 @@ jobs:
     - name: Run PennyLane Tests
       run: |
         python PennyLane/hadamard_test.py
+        exit $status

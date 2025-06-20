@@ -27,3 +27,5 @@ jobs:
     - name: Run Cirq Tests
       run: |
         python Cirq/hadamard_test.py
+        exit $status
+

@@ -27,3 +27,5 @@ jobs:
     - name: Run Braket Tests
       run: |
         python Braket/double_hadamard_test.py
+        exit $status
+

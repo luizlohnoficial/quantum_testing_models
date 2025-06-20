@@ -27,4 +27,4 @@ jobs:
     - name: Run Qiskit Tests
       run: |
         python Qiskit/hadamard_test.py
-        exit $status
+        python Qiskit/bell_state_test.py

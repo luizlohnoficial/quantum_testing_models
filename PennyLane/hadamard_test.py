@@ -1,6 +1,10 @@
 
+import logging
 import pennylane as qml
 from pennylane import numpy as np
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+logger = logging.getLogger(__name__)
 
 dev = qml.device("default.qubit", wires=1, shots=1000)
 
@@ -10,9 +14,12 @@ def circuit():
     return qml.sample(qml.PauliZ(0))
 
 def test_hadamard_distribution():
+    logger.info("Running PennyLane circuit")
     samples = circuit()
     zero_count = np.sum(samples == 1)
     one_count = np.sum(samples == -1)
+
+    logger.info("Zero count: %s, One count: %s", zero_count, one_count)
 
     zero_ratio = zero_count / 1000
     one_ratio = one_count / 1000

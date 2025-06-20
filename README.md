@@ -16,5 +16,3 @@ Este repositório contém exemplos de testes unitários aplicados ao desenvolvim
 - Braket/: Exemplos com Amazon Braket
 - docs/: Documentação complementar
 
-## Autor
-Desenvolvido por Luiz Lohn com suporte do ChatGPT OpenAI.

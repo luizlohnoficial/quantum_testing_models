@@ -1,5 +1,6 @@
 
-from qiskit import QuantumCircuit, Aer, execute
+from qiskit import QuantumCircuit, execute
+from qiskit.providers.aer import Aer
 import numpy as np
 
 def test_hadamard_distribution():

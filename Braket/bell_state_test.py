@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 def test_bell_state_entanglement():
     logger.info("Criando circuito Bell")
-    circuit = Circuit().h(0).cnot(0, 1).measure(0, 1)
+    circuit = Circuit().h(0).cnot(0, 1).measure(0).measure(1)
     logger.info("Circuito criado:\n%s", circuit)
     simulator = LocalSimulator()
 

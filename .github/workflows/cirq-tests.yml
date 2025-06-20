@@ -22,8 +22,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        set -x
         pip install cirq numpy
 
     - name: Run Cirq Tests
       run: |
+        set -x
         python Cirq/hadamard_test.py

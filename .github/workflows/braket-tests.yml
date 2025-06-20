@@ -22,8 +22,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        set -x
         pip install amazon-braket-sdk
 
     - name: Run Braket Tests
       run: |
+        set -x
         python Braket/double_hadamard_test.py

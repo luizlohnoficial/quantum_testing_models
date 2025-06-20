@@ -22,8 +22,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        set -x
         pip install pennylane numpy
 
     - name: Run PennyLane Tests
       run: |
+        set -x
         python PennyLane/hadamard_test.py

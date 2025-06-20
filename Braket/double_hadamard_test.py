@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 def test_double_hadamard_returns_initial_state():
     logger.info("Building circuit")
     circuit = Circuit().h(0).h(0).measure(0)
+    logger.info("Circuit:\n%s", circuit)
     logger.info("Running on LocalSimulator")
     simulator = LocalSimulator()
 

@@ -25,7 +25,17 @@ jobs:
         set -x
         pip install cirq numpy
 
+    - name: List Assets
+      run: |
+        set -x
+        ls -R
+
     - name: Run Cirq Tests
       run: |
         set -x
-        python Cirq/hadamard_test.py
+        python Cirq/hadamard_test.py | tee cirq_results.log
+
+    - name: Show Results
+      run: |
+        set -x
+        cat cirq_results.log

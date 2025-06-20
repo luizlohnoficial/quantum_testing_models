@@ -16,6 +16,7 @@ def test_hadamard_distribution():
     qc = QuantumCircuit(1, 1)
     qc.h(0)
     qc.measure(0, 0)
+    logger.info("Circuit:\n%s", qc.draw(output='text'))
 
     logger.info("Running on AerSimulator")
     backend = AerSimulator()

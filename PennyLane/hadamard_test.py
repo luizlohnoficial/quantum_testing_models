@@ -15,6 +15,7 @@ def circuit():
 
 def test_hadamard_distribution():
     logger.info("Running PennyLane circuit")
+    logger.info("Circuit:\n%s", qml.draw(circuit)())
     samples = circuit()
     zero_count = np.sum(samples == 1)
     one_count = np.sum(samples == -1)

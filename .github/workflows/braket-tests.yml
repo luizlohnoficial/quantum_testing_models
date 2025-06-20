@@ -25,7 +25,17 @@ jobs:
         set -x
         pip install amazon-braket-sdk
 
+    - name: List Assets
+      run: |
+        set -x
+        ls -R
+
     - name: Run Braket Tests
       run: |
         set -x
-        python Braket/double_hadamard_test.py
+        python Braket/double_hadamard_test.py | tee braket_results.log
+
+    - name: Show Results
+      run: |
+        set -x
+        cat braket_results.log

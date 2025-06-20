@@ -10,6 +10,7 @@ def test_hadamard_with_tolerance():
     logger.info("Preparing circuit")
     qubit = cirq.LineQubit(0)
     circuit = cirq.Circuit(cirq.H(qubit), cirq.measure(qubit, key='m'))
+    logger.info("Circuit:\n%s", circuit)
     logger.info("Running on Cirq Simulator")
     simulator = cirq.Simulator()
     result = simulator.run(circuit, repetitions=1000)

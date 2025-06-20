@@ -25,7 +25,17 @@ jobs:
         set -x
         pip install pennylane numpy
 
+    - name: List Assets
+      run: |
+        set -x
+        ls -R
+
     - name: Run PennyLane Tests
       run: |
         set -x
-        python PennyLane/hadamard_test.py
+        python PennyLane/hadamard_test.py | tee pennylane_results.log
+
+    - name: Show Results
+      run: |
+        set -x
+        cat pennylane_results.log

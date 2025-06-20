@@ -25,7 +25,17 @@ jobs:
         set -x
         pip install qiskit qiskit-aer numpy
 
+    - name: List Assets
+      run: |
+        set -x
+        ls -R
+
     - name: Run Qiskit Tests
       run: |
         set -x
-        python Qiskit/hadamard_test.py
+        python Qiskit/hadamard_test.py | tee qiskit_results.log
+
+    - name: Show Results
+      run: |
+        set -x
+        cat qiskit_results.log

@@ -1,9 +1,9 @@
 try:
     from qiskit import QuantumCircuit, transpile
-    from qiskit.providers.aer import Aer
+    from qiskit_aer import AerSimulator
 except ImportError as exc:
     raise ImportError(
-        "Qiskit is required to run this test. Install with `pip install qiskit qiskit-aer`."
+        "Qiskit and qiskit-aer are required to run this test. Install with `pip install qiskit qiskit-aer`."
     ) from exc
 import numpy as np
 
@@ -12,7 +12,7 @@ def test_hadamard_distribution():
     qc.h(0)
     qc.measure(0, 0)
 
-    backend = Aer.get_backend('aer_simulator')
+    backend = AerSimulator()
     compiled = transpile(qc, backend)
     job = backend.run(compiled, shots=1000)
     counts = job.result().get_counts()

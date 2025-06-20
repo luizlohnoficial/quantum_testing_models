@@ -34,6 +34,9 @@ jobs:
       run: |
         set -x
         python Qiskit/hadamard_test.py | tee qiskit_results.log
+        status=${PIPESTATUS[0]}
+        echo "exit code: $status" | tee -a qiskit_results.log
+        exit $status
 
     - name: Show Results
       run: |

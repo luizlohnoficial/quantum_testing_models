@@ -17,6 +17,14 @@ def test_double_hadamard_returns_initial_state():
     counts = result.measurement_counts
     logger.info("Counts: %s", counts)
 
-    assert counts.get('0', 0) == 100
+    assert counts.get('0', 0) == 100, "double hadamard should return |0>"
 
-test_double_hadamard_returns_initial_state()
+
+if __name__ == "__main__":
+    try:
+        test_double_hadamard_returns_initial_state()
+    except AssertionError as exc:
+        logger.error("Test failed: %s", exc)
+        raise
+    else:
+        logger.info("Test passed: double hadamard returned |0>")

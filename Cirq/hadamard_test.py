@@ -20,7 +20,15 @@ def test_hadamard_with_tolerance():
     zero_ratio = counts.get(0, 0) / 1000
     one_ratio = counts.get(1, 0) / 1000
 
-    assert np.isclose(zero_ratio, 0.5, atol=0.05)
-    assert np.isclose(one_ratio, 0.5, atol=0.05)
+    assert np.isclose(zero_ratio, 0.5, atol=0.05), "probability of 0 close to 0.5"
+    assert np.isclose(one_ratio, 0.5, atol=0.05), "probability of 1 close to 0.5"
 
-test_hadamard_with_tolerance()
+
+if __name__ == "__main__":
+    try:
+        test_hadamard_with_tolerance()
+    except AssertionError as exc:
+        logger.error("Test failed: %s", exc)
+        raise
+    else:
+        logger.info("Test passed: distribution close to 50/50")
